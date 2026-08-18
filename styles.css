@@ -15,6 +15,15 @@
     height: 100vh;
     width: 5vw;
 }
+
+button{
+    width: 50%;
+    height: 5%;
+    border-radius: 50%;
+    background-color: rgb(57, 56, 56);
+    margin-top: 2vh;
+}
+
 #chat{
     display: flex;
     flex-direction: column;
@@ -27,27 +36,42 @@
     margin: 2vh;
     font-weight: bolder;
 }
-button{
-    width: 50%;
-    height: 5%;
-    border-radius: 50%;
-    background-color: rgb(57, 56, 56);
-    margin-top: 2vh;
+
+.editing{
+    background-color: transparent;
+    border: 0;
+    text-align: right;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bolder;
+    font-size: large;
 }
+.editing:focus{
+    outline: none;
+    box-shadow: none;
+}
+
 .messages{
+    
     background-color: rgb(57, 56, 56);
-    height: 80vh;
+    height: 75vh;
     padding: 2vw;
-    padding-bottom: 0;
-    text-wrap: balance;
-    overflow: scroll;
+    padding-bottom: 1.5vh;
+    display: flex;
+    flex-direction: column-reverse;
+    overflow-y: auto;
 }
 .message{
     margin-bottom: 0.3vh;
     
 }
 .text-input{
+    margin-top: 2vh;
     width: 90vw;
     height: 5vh;
     background-color: rgb(57, 56, 56);
+}
+.text-input:focus{
+    border-color: orange;
+    box-shadow: none;
+    outline: none;
 }
