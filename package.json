@@ -1,0 +1,30 @@
+{
+  "name": "real-time-chat",
+  "version": "1.0.0",
+  "description": "A real-time chat app",
+  "keywords": [
+    "live",
+    "real",
+    "time",
+    "chat",
+    "app"
+  ],
+  "homepage": "https://github.com/Alozanodeosma/LiveChatApp#readme",
+  "bugs": {
+    "url": "https://github.com/Alozanodeosma/LiveChatApp/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alozanodeosma/LiveChatApp.git"
+  },
+  "license": "ISC",
+  "author": "ALozanod",
+  "type": "commonjs",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "ws": "^8.21.3"
+  }
+}

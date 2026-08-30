@@ -4,6 +4,12 @@ const inputText = document.querySelector(".text-input");
 inputText.addEventListener("keypress", sendText);
 let username = document.querySelector(".user-name");
 
+const socket = new WebSocket('ws://localhost:3001');
+//Client
+socket.addEventListener('open', () => {
+  console.log('Conectado al servidor WebSocket');
+  socket.send('¡Hola servidor! Soy el cliente.');
+});
 
 //Text bar 
 let prefix = ` ${username.value} > `;
@@ -20,7 +26,11 @@ function sendText(key){
         newMessage.textContent=`${inputText.value}`;
         newMessage.classList="message";
         messages.prepend(newMessage);
+
+        socket.send(inputText.value);
+
         inputText.value=prefix;
+
     }
 }
 
@@ -30,3 +40,4 @@ username.addEventListener("blur", ()=>{
     inputText.value = prefix;
     console.log("heloo");
 });
+
