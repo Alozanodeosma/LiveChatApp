@@ -39,11 +39,19 @@ webSocketServer.on("close",()=>{
 })
 
 webSocketServer.on("connection",(socket)=>{
+    //when the socket is Open, log a confirmation message on CLIENT side
     socket.on("open",()=>{
         console.log("a connection has been open");
     });
+    //Server have an event that when recieved a message from the client, send it back to all the clients except himself
+        //in future revisions and iterations, this cannot happen with ALL messages
     socket.addEventListener("message",(message)=>{
-        console.log('Mensaje recibido del del cliente:', message.data);
+        console.log('Mensaje recibido del cliente:', message.data);
+        webSocketServer.clients.forEach((client)=>{
+            if(client!=socket){
+                client.send(message.data);
+            }
+        })
     })
 })
 

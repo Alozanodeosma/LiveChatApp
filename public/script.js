@@ -1,10 +1,11 @@
 
 const messages = document.querySelector(".messages");
 const inputText = document.querySelector(".text-input");
-inputText.addEventListener("keypress", sendText);
+inputText.addEventListener("keypress", sendTextToServer);
 let username = document.querySelector(".user-name");
 
 const socket = new WebSocket('ws://localhost:3001');
+
 //Client
 socket.addEventListener('open', () => {
   console.log('Conectado al servidor WebSocket');
@@ -20,7 +21,7 @@ inputText.addEventListener('input', () => {
   }
 });
 
-function sendText(key){
+function sendTextToServer(key){
     if (key.key == "Enter"){
         let newMessage = document.createElement('p');
         newMessage.textContent=`${inputText.value}`;
@@ -32,6 +33,11 @@ function sendText(key){
         inputText.value=prefix;
 
     }
+}
+
+socket.onmessage = (event)=>{
+    const recievedData = event.data;
+    console.log(recievedData);
 }
 
 //Username
