@@ -11,12 +11,11 @@
         <div id="sidebar">
             <button class="new-chat-bubble">+</button>
             <button class="chat-bubble">0</button>
-            <button class="chat-bubble">0</button>
-            <button class="chat-bubble">0</button>
         </div>
         <div id="chat">
             <div id="topbar">
-                <elem class="chat-name">CHAT NAME</elem>
+                <elem class="chatroom-id">CHATROOM ID: 21361736183</elem>
+                <elem class="chat-name">CHAT 1</elem>
                 <input class="user-name editing" type="text" placeholder="USERNAME" maxlength="20">
             </div>
             <div class="messages">
@@ -28,7 +27,37 @@
                 <input type="text" class="text-input">
             </div>
         </div>
+        <div id="connectedUsers">
+            <p class="user-name">USER 1 <span class="user-status-connected">O</span> </p>
+            <p class="user-name">USER 1 <span class="user-status-connected">O</span> </p>
+            <p class="user-name">USER 1 <span class="user-status-disconnected">O</span> </p>
+            <p class="user-name">USER 1 <span class="user-status-connected">O</span> </p>
+            <p class="user-name">USER 1 <span class="user-status-connected">O</span> </p>
+        </div>
     </div>
+    <div class="popup" hidden>
+            <form>
+                <label for="username">Username:</label><br>
+                <input type="text" id="username" name="username"><br>
+                <label for="password">Password:</label><br>
+                <input type="password" id="password" name="password">
+                <div id="login-popup-buttons">
+                    <button>Log in</button>
+                    <button>Register</button>   
+                </div>
+            </form>
+        </div>
+    <div class="popup" id="chatroomPopup" hidden = true>
+            <form>
+                <label for="chatroomcode">Chatroom Code:</label><br>
+                <input type="password" id="chatroomcode" name="chatroomcode"><br>
+                
+            </form>
+            <div id="chatroom-popup-buttons">
+                    <button id="joinChatroomBtn">Send</button>
+                    <button id="createNewChatroomBtn">Create new Chatroom</button>   
+                </div>
+        </div>
 </body>
 <script src="script.js"></script>
 </html>
